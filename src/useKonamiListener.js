@@ -1,28 +1,28 @@
 import { useEffect, useState } from 'react';
 
-const useKonamiListener = () => {
+export const sequence = [
+    38, // up
+    38, // up
+    40, // down
+    40, // down
+    37, // left
+    39, // right
+    37, //left
+    39, // right
+    66, // b
+    65, // a
+]
+
+export default function useKonamiListener() {
 
     const [keystrokes, setKeystrokes] = useState([]);
     const [index, setIndex] = useState(0);
-    const [match, setMatch] = useState(false)
-
-    const konamiCode = [
-        38, // up
-        38, // up
-        40, // down
-        40, // down
-        37, // left
-        39, // right
-        37, //left
-        39, // right
-        66, // b
-        65, // a
-    ]
+    const [match, setMatch] = useState('false')
 
     useEffect(() => {
         const handleKeydown = (e) => {
 
-            if (e.keyCode === konamiCode[index]) {
+            if (e.keyCode === sequence[index]) {
                 setKeystrokes([...keystrokes, e.keyCode]);
                 setIndex(index + 1);
             } else {
@@ -38,13 +38,11 @@ const useKonamiListener = () => {
         };
       });
 
-    if (index === konamiCode.length) {
+    if (index === sequence.length) {
         setKeystrokes([]);
         setIndex(0);
-        setMatch(true);
+        setMatch('true');
     }
 
-    return match;
+    return [match, keystrokes];
 };
-
-export default useKonamiListener;
