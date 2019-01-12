@@ -8,8 +8,6 @@ const App = (props) => {
 
   const match = useKonamiListener();
 
-  console.log(match);
-
   return (
     <div className="App" >
       <header className="App-header">
