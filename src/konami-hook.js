@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useKonamiListener = () => {
 
@@ -19,8 +19,8 @@ const useKonamiListener = () => {
         65, // a
     ]
 
-    const listener = {
-        onKeyDown: (e) => {
+    useEffect(() => {
+        const handleKeydown = (e) => {
 
             if (e.keyCode === konamiCode[index]) {
                 setKeystrokes([...keystrokes, e.keyCode]);
@@ -30,7 +30,13 @@ const useKonamiListener = () => {
                 setIndex(0);
             }
         }
-    };
+
+        window.addEventListener('keydown', handleKeydown);
+
+        return () => {
+          window.removeEventListener('keydown', handleKeydown);
+        };
+      });
 
     if (index === konamiCode.length) {
         setKeystrokes([]);
@@ -38,7 +44,7 @@ const useKonamiListener = () => {
         setMatch(true);
     }
 
-  return [listener, match];
+    return match;
 };
 
 export default useKonamiListener;

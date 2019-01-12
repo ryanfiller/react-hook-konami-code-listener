@@ -6,12 +6,12 @@ import useKonamiListener from './konami-hook';
 
 const App = (props) => {
 
-  const [listener, match] = useKonamiListener();
+  const match = useKonamiListener();
 
   console.log(match);
 
   return (
-    <div className="App" tabIndex="0" {...listener}>
+    <div className="App" >
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
