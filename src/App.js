@@ -2,24 +2,43 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import useKonamiListener from './konami-hook';
+
 const App = (props) => {
 
+  const [listener, match] = useKonamiListener();
+
+  console.log(match);
+
   return (
-    <div className="App">
+    <div className="App" tabIndex="0" {...listener}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Enter the <a
+            className="App-link"
+            href="https://en.wikipedia.org/wiki/Konami_Code"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Konami Code
+          </a>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          <kbd>↑</kbd>
+          <kbd>↑</kbd>
+          <kbd>↓</kbd>
+          <kbd>↓</kbd>
+          <kbd>←</kbd>
+          <kbd>→</kbd>
+          <kbd>←</kbd>
+          <kbd>→</kbd>
+          <kbd>B</kbd>
+          <kbd>A</kbd>
+        </p>
       </header>
+
+      {match === true ? <div className="popup"><h2>You did it!</h2><p>Refresh the page.</p></div> : null}
     </div>
   )
 }
