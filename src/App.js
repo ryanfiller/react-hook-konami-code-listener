@@ -36,7 +36,7 @@ const App = (props) => {
         </p>
       </header>
       {console.log(keystrokes)}
-      {match === true ? <div className="popup"><h2>You did it!</h2><p>Refresh the page.</p></div> : null}
+      {match === 'true' ? <div className="popup"><h2>You did it!</h2><p>Refresh the page.</p></div> : null}
     </div>
   )
 }
