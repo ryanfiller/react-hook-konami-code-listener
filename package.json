@@ -1,20 +1,35 @@
 {
-  "name": "konami-hooks",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "16.7.0-alpha.0",
-    "react-dom": "16.7.0-alpha.0",
-    "react-scripts": "2.1.3"
+  "name": "react-hook-konmi-code-listener",
+  "version": "1.0.1",
+  "description": "another react hook for the konami code",
+  "main": "useKonamiListener.js",
+  "repository": "https://github.com/ryanfiller/react-hook-konami-code-listener",
+  "author": "Ryan Filler <ryanfiller89@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
   },
+  "keywords": [
+    "react",
+    "hooks",
+    "konami"
+  ],
+  "files": [
+    "useKonamiListener.js"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
+  },
+  "dependencies": {
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2",
+    "react-scripts": "2.1.3"
   },
   "browserslist": [
     ">0.2%",
