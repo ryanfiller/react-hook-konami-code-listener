@@ -1,5 +1,5 @@
 {
-  "name": "react-hook-konmi-code-listener",
+  "name": "react-hook-konami-code-listener",
   "version": "1.0.1",
   "description": "another react hook for the konami code",
   "main": "useKonamiListener.js",
