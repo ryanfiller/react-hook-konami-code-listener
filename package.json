@@ -1,8 +1,8 @@
 {
   "name": "react-hook-konami-code-listener",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "another react hook for the konami code",
-  "main": "src/useKonamiListener.js",
+  "main": "index.js",
   "repository": "https://github.com/ryanfiller/react-hook-konami-code-listener",
   "author": "Ryan Filler <ryanfiller89@gmail.com>",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "konami"
   ],
   "files": [
-    "src/useKonamiListener.js"
+    "index.js"
   ],
   "scripts": {
     "start": "react-scripts start",
