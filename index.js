@@ -7,7 +7,7 @@ export const sequence = [
     40, // down
     37, // left
     39, // right
-    37, //left
+    37, // left
     39, // right
     66, // b
     65, // a
@@ -17,7 +17,7 @@ const useKonamiListener = () => {
 
     const [keystrokes, setKeystrokes] = useState([]);
     const [index, setIndex] = useState(0);
-    const [match, setMatch] = useState('false')
+    const [match, setMatch] = useState(false)
 
     useEffect(() => {
         const handleKeydown = (e) => {
@@ -41,10 +41,14 @@ const useKonamiListener = () => {
     if (index === sequence.length) {
         setKeystrokes([]);
         setIndex(0);
-        setMatch('true');
+        setMatch(true);
     }
 
-    return [match, keystrokes];
+    const reset = () => {
+        setMatch(false)
+    };
+
+    return [match, reset, keystrokes];
 };
 
 export default useKonamiListener;
